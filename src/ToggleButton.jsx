@@ -7,7 +7,7 @@ export default function ToggleButton(props) {
                 <b>{props.label}</b>
             </label>
             <label className="togglerContainer">
-                <input name={props.label} className="togglerCheckbox" type="checkbox" defaultChecked={props.checkedValue} onClick={props.clickHandler} disabled={props.disabled}/>
+                <input name={props.label} className="togglerCheckbox" type="checkbox" defaultChecked={props.checkedValue} checked={props.checkedValue} onClick={props.clickHandler}/>
                 <span className="togglerSpan" />
             </label>
         </div>

@@ -36,12 +36,16 @@ function App() {
   }
   
   return (
-    <div id="drum-machine" className="border">
-      <DrumBoard bank={bank} currentSound={currentSound} updateSound={updateSound}/>
-      <DrumSettings volume={volume} updateVolume={updateVolume} currentSound={currentSound}> 
-        <ToggleButton label="Power" checkedValue={power} clickHandler={togglePower}/>
-        <ToggleButton disabled={!power}label="Bank" checkedValue={bank} clickHandler={toggleBank}/>
-      </DrumSettings>
+    <div>
+       <a href="https://webfabrik.substack.com/p/markdown-app?sd=pf" target="_blank"><i className="fa-solid fa-info"></i></a>
+      <a target="_blank" href="https://github.com/TillJonas27/" ><i className="fa-brands fa-github"></i></a>
+      <div id="drum-machine" className="border">
+        <DrumBoard bank={bank} currentSound={currentSound} updateSound={updateSound}/>
+        <DrumSettings volume={volume} updateVolume={updateVolume} currentSound={currentSound}> 
+          <ToggleButton label="Power" checkedValue={power} clickHandler={togglePower}/>
+          <ToggleButton label="Bank" checkedValue={bank} clickHandler={toggleBank}/>
+        </DrumSettings>
+      </div>
     </div>
   )
 }
