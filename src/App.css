@@ -1,0 +1,175 @@
+* {
+  box-sizing:border-box;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("https://images.unsplash.com/photo-1588032786045-59cefda005c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1188&q=80");
+  color: white;
+}
+
+#drum-machine {
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 40rem;
+  height: 25rem;
+  backdrop-filter: blur(10px);
+  display: flex;
+}
+
+.drum-grid {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  height: 100%;
+  width: 60%;
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.drum-pad {
+  width: 90%;
+  height: 80%;
+  backdrop-filter: blur(100px);
+  border-radius: 10px;
+  box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.drum-pad:active {
+  box-shadow: none;
+}
+
+#settings {
+  padding: 1rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  gap: 0.5rem;
+}
+
+#display {
+  backdrop-filter: blur(10px);
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 1rem;
+}
+
+.slider {
+  display: block;
+  width: 75%;
+  height: 15px;
+  background: #000;
+  outline: none;
+  border: 3px solid #F9AA33;
+  border-radius: 8px;
+}
+
+.slider::-moz-range-thumb {
+  width: 10px;
+  height: 20px;
+  background: #000;
+  cursor: pointer;
+  border: 3px solid #F9AA33;
+  border-radius: 4px;
+}
+
+.slider::-webkit-slider-thumb {
+  width: 10px;
+  height: 20px;
+  background: #000;
+  cursor: pointer;
+  border: 3px solid #F9AA33;
+  border-radius: 4px;
+}
+
+.toggleButtonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* CSS for Toggler */
+
+.togglerContainer {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+}
+
+.togglerCheckbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.togglerSpan {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #232f34;
+  transition: 0.3s;
+}
+
+.togglerSpan:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  bottom: 0;
+  left:0;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.togglerCheckbox:checked + .togglerSpan {
+  background-color: #F9AA33;
+}
+
+.togglerCheckbox:checked + .togglerSpan:before {
+  transform: translateX(15px);
+}
+
+/* No more CSS for Toggler */
+
+@media (max-width: 600px) {
+  #drum-machine {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 40rem;
+  }
+
+  #settings {
+    flex-direction: row;
+  }
+
+  .drum-grid {
+    width: 95%;
+    padding:0.25rem;
+  }
+
+  .drum-pad {
+    max-height: 6rem;
+    max-width: 6rem;
+  }
+}
